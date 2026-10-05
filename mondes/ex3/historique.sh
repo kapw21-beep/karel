@@ -39,7 +39,7 @@ git add $f; git commit -q -m "[3] Karel contourne le mur par le haut"
 echo "ramasser_balise" >> $f
 git add $f; git commit -q -m "[3] Karel ramasse la balise"
 
-sed -i "s/repeter 3 fois:/repeter 2 fois:/" $f
+sed "s/repeter 3 fois:/repeter 2 fois:/" $f > $f.new && mv $f.new $f
 git add $f; git commit -q -m "[3] Simplification de tourner_droite"
 
 { echo "# Karel contourne un mur et ramasse une balise"; echo; cat $f; } > $f.new && mv $f.new $f
